@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {  Switch, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import AddUser from "./components/AddUser";
+import ListUsers from "./components/ListUsers";
+import Backoffice from "./components/Backoffice";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <nav className="navbar navbar-expand navbar-dark bg-dark" role="navigation">
+          <a href="/users" className="navbar-brand">
+            application
+          </a>
+          <div className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to={"/add"} className="nav-link">
+                ajouter un utilisateur
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/cars"} className="nav-link">
+              ajouter une Véhicule
+              </Link>
+            </li>
+            
+            <li className="nav-item">
+              <Link to={"/back"} className="nav-link">
+                Consulter la partie Backend
+              </Link>
+            </li>
+            
+          </div>
+         
+         
+          
+        </nav>
+        <div className="container mt-3">
+          <h2>Bienvenue dans mon application</h2>
+          <Switch>
+            <Route exact path={["/", "/back"]} component={Backoffice} />
+            <Route exact path="/add" component={AddUser}/>
+            <Route exact path="/users" component={ListUsers}/>
+
+          </Switch>
+        </div>
+      </div>
+    );
+
+}
 }
 
 export default App;
