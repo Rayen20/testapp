@@ -3,8 +3,11 @@ import {  Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import AddUser from "./components/AddUser";
+import Addcar from "./components/AddCar";
+
 import ListUsers from "./components/ListUsers";
 import Backoffice from "./components/Backoffice";
+import ListCars from "./components/ListCars";
 
 
 
@@ -23,7 +26,7 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/cars"} className="nav-link">
+              <Link to={"/addcar"} className="nav-link">
               ajouter une Véhicule
               </Link>
             </li>
@@ -45,6 +48,8 @@ class App extends Component {
             <Route exact path={["/", "/back"]} component={Backoffice} />
             <Route exact path="/add" component={AddUser}/>
             <Route exact path="/users" component={ListUsers}/>
+            <Route exact path="/cars" component={ListCars}/>
+            <Route exact path="/addcar" component={Addcar}/>
 
           </Switch>
         </div>

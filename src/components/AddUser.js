@@ -140,7 +140,7 @@ export default class AddUser extends Component {
             <div className="form-group">
               <label htmlFor="title">date de naissance</label>
               <input
-                type="text"
+                type="date"
                 className="form-control"
                 id="title"
                 required

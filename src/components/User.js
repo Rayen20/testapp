@@ -142,7 +142,7 @@ export default class User extends Component {
     userservice.update(this.state.currentUser.key, data)
       .then(() => {
         this.setState({
-          message: "The user was updated successfully!",
+          message: "modifié avec succés!",
         });
       })
       .catch((e) => {
@@ -192,7 +192,7 @@ export default class User extends Component {
               <div className="form-group">
                 <label htmlFor="datebirth">Date de naissance</label>
                 <input
-                  type="text"
+                  type="date"
                   className="form-control"
                   id="datebirth"
                   value={currentUser.datebirth}
@@ -246,7 +246,7 @@ export default class User extends Component {
          
 
             <button
-              className="badge badge-danger mr-2"
+              className="badge badge-danger mr-2 btn btn-danger "
               onClick={this.deleteUser}
             >
               Delete
@@ -254,7 +254,7 @@ export default class User extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="badge badge-success btn btn-success" 
               onClick={this.updateUser}
             >
               Update
@@ -264,7 +264,7 @@ export default class User extends Component {
         ) : (
           <div>
             <br />
-            <p>Please click on a User...</p>
+            <p>Cliquer sur un utilisateur...</p>
           </div>
         )}
       </div>
