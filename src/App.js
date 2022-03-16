@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark" role="navigation">
-          <a href="/users" className="navbar-brand">
+          <a href="/" className="navbar-brand">
             application
           </a>
           <div className="navbar-nav mr-auto">
